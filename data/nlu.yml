@@ -1,95 +1,6 @@
 version: "3.1"
 
 nlu:
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
-
-- intent: goodbye
-  examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
-
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-
 - regex: one_six
   examples: |
     - \b1\.6\b
@@ -106,19 +17,37 @@ nlu:
   examples: |
     - tu5
     - tu5jp4
-    - [1.6](OneSix) 
-    - [1.6](OneSix) 16v
+    - [16](OneSix) 
+    - [16](OneSix) 16v
     - nfu
 
 - intent: engine_tu3
   examples: |
     - tu3
     - tu3jp
-    - [1.4](OneFour)
-    - [1.4](OneFour) 8v
-    - [1.4](OneFour) eight valves
-    - [1.4](OneFour) 8 valves
+    - [14](OneFour)
+    - [14](OneFour) 8v
+    - [14](OneFour) eight valves
+    - [14](OneFour) 8 valves
 
+- intent: model
+  examples: |
+    - [c2](model_ent)
+    - [c3](model_ent)
+    - [c2](model_ent) vts
+    - [c2](model_ent) vtr
+    - citroen [c2](model_ent)
+    - citroen [c3](model_ent)
+    - citroen [c2](model_ent) vtr
+    - citroen [c2](model_ent) vts
+
+- intent: engine
+  examples: |
+    - engine
+
+- intent: register
+  examples: |
+    - register
 
 - intent: engine_et3
   examples: |

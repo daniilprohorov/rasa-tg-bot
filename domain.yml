@@ -1,21 +1,41 @@
 version: "3.1"
 
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
   - engine_tu3
   - engine_tu5
   - engine_et3
+  - model
+  - engine
+  - register
 
 entities:
   - OneFour
   - OneSix
+  - model_ent
 
+slots:
+  engine_slot:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_intent
+      intent: engine_tu3
+      value: "1.4 tu3"
+
+    - type: from_intent
+      intent: engine_tu5
+      value: "1.6 tu5"
+
+    - type: from_intent
+      intent: engine_et3
+      value: "1.4 et3"
+
+  model_slot:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: model_ent
 
 responses:
   utter_greet:
@@ -45,6 +65,25 @@ responses:
 
   utter_et3:
   - text: "et3"
+
+  utter_register_model:
+  - text: "utter_register_model"
+
+  utter_write_model:
+    - text: "Please write model of your car:"
+
+  utter_write_engine:
+    - text: "Please write engine of your car:"
+
+  utter_model:
+    - text: "Model is {model_slot}"
+
+  utter_engine:
+    - text: "Engine is {engine_slot}"
+
+  utter_all_params:
+    - text: "Your params is: {model_slot} {engine_slot}"
+
 
 session_config:
   session_expiration_time: 60

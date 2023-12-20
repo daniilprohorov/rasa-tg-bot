@@ -11,17 +11,17 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: engine tu3
-  steps:
-    - intent: engine_tu3
-    - action: utter_tu3
-
-- rule: engine tu5
-  steps:
-    - intent: engine_tu5
-    - action: utter_tu5
-
-- rule: engine et3
-  steps:
-    - intent: engine_et3
-    - action: utter_et3
+#- rule: engine tu3
+#  steps:
+#    - intent: engine_tu3
+#    - action: utter_tu3
+#
+#- rule: engine tu5
+#  steps:
+#    - intent: engine_tu5
+#    - action: utter_tu5
+#
+#- rule: engine et3
+#  steps:
+#    - intent: engine_et3
+#    - action: utter_et3
