@@ -1,0 +1,51 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - engine_tu3
+  - engine_tu5
+  - engine_et3
+
+entities:
+  - OneFour
+  - OneSix
+
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_tu3:
+  - text: "tu3"
+
+  utter_tu5:
+  - text: "tu5"
+
+  utter_et3:
+  - text: "et3"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-OneFour",
+      "2": "I-OneFour",
+      "3": "L-OneFour",
+      "4": "U-OneFour",
+      "5": "B-OneSix",
+      "6": "I-OneSix",
+      "7": "L-OneSix",
+      "8": "U-OneSix",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-OneFour": 1,
+      "I-OneFour": 2,
+      "L-OneFour": 3,
+      "U-OneFour": 4,
+      "B-OneSix": 5,
+      "I-OneSix": 6,
+      "L-OneSix": 7,
+      "U-OneSix": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]
