@@ -7,6 +7,7 @@ intents:
   - model
   - engine
   - register
+  - register_form_activate
 
 entities:
   - OneFour
@@ -36,6 +37,14 @@ slots:
     mappings:
     - type: from_entity
       entity: model_ent
+
+forms:
+  register_form:
+    required_slots:
+      - model_slot
+      - engine_slot
+
+
 
 responses:
   utter_greet:
@@ -73,6 +82,12 @@ responses:
     - text: "Please write model of your car:"
 
   utter_write_engine:
+    - text: "Please write engine of your car:"
+
+  utter_ask_model_slot:
+    - text: "Please write model of your car:"
+
+  utter_ask_engine_slot:
     - text: "Please write engine of your car:"
 
   utter_model:

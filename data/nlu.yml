@@ -58,3 +58,6 @@ nlu:
 #    - [one_four](OneFour) sixteen valves
 
     
+- intent: register_form_activate
+  examples: |
+    - register_form_activate

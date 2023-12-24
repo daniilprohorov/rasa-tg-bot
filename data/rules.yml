@@ -11,6 +11,23 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
+- rule: Activate form
+  steps:
+    - intent: register_form_activate
+    - action: register_form
+    - active_loop: register_form
+
+- rule: Submit form
+  condition:
+    - active_loop: register_form
+  steps:
+    - action: register_form
+    - active_loop: null
+    - slot_was_set:
+        - requested_slot: null
+    - action: utter_all_params
+
+
 #- rule: engine tu3
 #  steps:
 #    - intent: engine_tu3
