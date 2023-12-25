@@ -34,12 +34,23 @@ nlu:
   examples: |
     - [c2](model_ent)
     - [c3](model_ent)
-    - [c2](model_ent) vts
+    - [c2](model_ent) [vts]{"entity": "engine_ent", "value": "1.6 tu5jp4"}
     - [c2](model_ent) vtr
     - citroen [c2](model_ent)
     - citroen [c3](model_ent)
     - citroen [c2](model_ent) vtr
     - citroen [c2](model_ent) vts
+
+- intent: engine_et3
+  examples: |
+    - et3
+
+- intent: transmission
+  examples: |
+    - [manual]{"entity": "transmission_ent", "value": "MT"}
+    - [MT](transmission_ent)
+    - [AT](transmission_ent)
+    - [AMT](transmission_ent)
 
 - intent: engine
   examples: |
@@ -49,9 +60,15 @@ nlu:
   examples: |
     - register
 
-- intent: engine_et3
+- intent: change_engine
   examples: |
-    - et3
+    - update engine
+    - change engine type
+    - set engine
+    - upgrate engine
+    - change engine info
+    - change type of engine
+
 #    - [one_four](OneFour) 16
 #    - [one_four](OneFour) 16v
 #    - [one_four](OneFour) 16 valves

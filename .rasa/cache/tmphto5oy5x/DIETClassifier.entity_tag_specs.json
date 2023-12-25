@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-OneFour",
+      "2": "I-OneFour",
+      "3": "L-OneFour",
+      "4": "U-OneFour",
+      "5": "B-OneSix",
+      "6": "I-OneSix",
+      "7": "L-OneSix",
+      "8": "U-OneSix",
+      "9": "B-engine_ent",
+      "10": "I-engine_ent",
+      "11": "L-engine_ent",
+      "12": "U-engine_ent",
+      "13": "B-model_ent",
+      "14": "I-model_ent",
+      "15": "L-model_ent",
+      "16": "U-model_ent",
+      "17": "B-transmission_ent",
+      "18": "I-transmission_ent",
+      "19": "L-transmission_ent",
+      "20": "U-transmission_ent",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-OneFour": 1,
+      "I-OneFour": 2,
+      "L-OneFour": 3,
+      "U-OneFour": 4,
+      "B-OneSix": 5,
+      "I-OneSix": 6,
+      "L-OneSix": 7,
+      "U-OneSix": 8,
+      "B-engine_ent": 9,
+      "I-engine_ent": 10,
+      "L-engine_ent": 11,
+      "U-engine_ent": 12,
+      "B-model_ent": 13,
+      "I-model_ent": 14,
+      "L-model_ent": 15,
+      "U-model_ent": 16,
+      "B-transmission_ent": 17,
+      "I-transmission_ent": 18,
+      "L-transmission_ent": 19,
+      "U-transmission_ent": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]

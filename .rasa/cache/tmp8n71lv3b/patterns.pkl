@@ -1,0 +1,22 @@
+[
+  {
+    "name": "one_four",
+    "pattern": "\\b14\\b"
+  },
+  {
+    "name": "one_four",
+    "pattern": "\\b1\\,4\\b"
+  },
+  {
+    "name": "one_four",
+    "pattern": "\\b1\\.4\\b"
+  },
+  {
+    "name": "one_six",
+    "pattern": "\\b1\\,6\\b"
+  },
+  {
+    "name": "one_six",
+    "pattern": "\\b1\\.6\\b"
+  }
+]
