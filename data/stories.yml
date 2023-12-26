@@ -19,18 +19,48 @@ stories:
 #        - engine_slot
     - action: utter_all_params
 
-- story: Change engine
+# - story: Change engine
+#   steps:
+#     - intent: change_engine
+#     - active_loop: null
+#     - slot_was_set:
+#       - requested_slot: null
+#     - action: utter_write_engine
+#     - or:
+#       - intent: engine_tu3
+#       - intent: engine_tu5
+#       - intent: engine_et3
+#     - action: utter_engine
+#     - action: register_form
+#     - active_loop: register_form
+
+- story: Change engine start
   steps:
     - intent: change_engine
-    - active_loop: null
-    - slot_was_set:
-      - requested_slot: null
+    - checkpoint: stop_form
+
+- story: Change engine
+  steps:
+    - checkpoint: stopped_form
     - action: utter_write_engine
     - or:
       - intent: engine_tu3
       - intent: engine_tu5
       - intent: engine_et3
     - action: utter_engine
+    - checkpoint: continue_form
+
+- story: Stop form
+  steps:
+    - checkpoint: stop_form
+    - active_loop: null
+    - slot_was_set:
+      - requested_slot: null
+    - checkpoint: stopped_form
+
+- story: Continue form
+  steps:
+    - checkpoint: continue_form
     - action: register_form
     - active_loop: register_form
 

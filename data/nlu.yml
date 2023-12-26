@@ -64,6 +64,7 @@ nlu:
   examples: |
     - update engine
     - change engine type
+    - change engine
     - set engine
     - upgrate engine
     - change engine info
