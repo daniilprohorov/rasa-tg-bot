@@ -5,8 +5,7 @@ intents:
   - engine_tu5
   - engine_et3
   - model
-  - engine
-  - change_engine
+  - change
   - transmission
   - register
   - register_form_activate
@@ -17,6 +16,11 @@ entities:
   - model_ent
   - engine_ent
   - transmission_ent
+  - change_ent
+
+actions:
+  - action_change_slot_set_null
+  - action_register_form_slots_reset
 
 slots:
   engine_slot:
@@ -52,12 +56,23 @@ slots:
       - AMT
       - MT
       - AT
-
     mappings:
     - type: from_entity
       entity: transmission_ent
-    # - type: from_intent
-    #   intent: transmission
+
+  change_slot:
+    type: categorical
+    influence_conversation: true
+    values:
+      - engine
+      - transmission
+      - model
+      - not_set
+
+    mappings:
+      - type: from_entity
+        entity: change_ent
+
 
 
 forms:
@@ -99,15 +114,6 @@ responses:
   utter_et3:
   - text: "et3"
 
-  utter_register_model:
-  - text: "utter_register_model"
-
-  utter_write_model:
-    - text: "Please write model of your car:"
-
-  utter_write_engine:
-    - text: "Please write engine of your car:"
-
   utter_ask_model_slot:
     - text: "Please write model of your car:"
 
@@ -125,6 +131,9 @@ responses:
 
   utter_transmission:
     - text: "Transmission is {transmission_slot}"
+
+  utter_change:
+    - text: "Change {change_slot}"
 
   utter_all_params:
     - text: "Your params is: {model_slot} {engine_slot} {transmission_slot}"

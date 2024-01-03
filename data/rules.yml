@@ -1,19 +1,10 @@
 version: "3.1"
 
 rules:
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
-
-- rule: Say 'I am a bot' anytime the user challenges
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
-
 - rule: Activate form
   steps:
     - intent: register_form_activate
+    - action: action_register_form_slots_reset
     - action: register_form
     - active_loop: register_form
 
@@ -27,18 +18,3 @@ rules:
         - requested_slot: null
     - action: utter_all_params
 
-
-#- rule: engine tu3
-#  steps:
-#    - intent: engine_tu3
-#    - action: utter_tu3
-#
-#- rule: engine tu5
-#  steps:
-#    - intent: engine_tu5
-#    - action: utter_tu5
-#
-#- rule: engine et3
-#  steps:
-#    - intent: engine_et3
-#    - action: utter_et3

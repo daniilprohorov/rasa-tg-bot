@@ -52,23 +52,47 @@ nlu:
     - [AT](transmission_ent)
     - [AMT](transmission_ent)
 
-- intent: engine
-  examples: |
-    - engine
-
 - intent: register
   examples: |
     - register
+    
 
-- intent: change_engine
+- intent: change
   examples: |
-    - update engine
-    - change engine type
-    - change engine
-    - set engine
-    - upgrate engine
-    - change engine info
-    - change type of engine
+    - update [engine](change_ent)
+    - change type [engine](change_ent)
+    - change [engine](change_ent)
+    - set [engine](change_ent)
+    - upgrade [engine](change_ent)
+    - change [engine](change_ent) info 
+    - change type of [engine](change_ent)
+    - update [transmission](change_ent)
+    - change type [transmission](change_ent)
+    - change [transmission](change_ent)
+    - set [transmission](change_ent)
+    - upgrade [transmission](change_ent)
+    - change [transmission](change_ent) info 
+    - change type of [transmission](change_ent)
+
+#- intent: change_engine
+#  examples: |
+#    - update engine
+#    - change engine type
+#    - change engine
+#    - set engine
+#    - upgrate engine
+#    - change engine info
+#    - change type of engine
+#
+#- intent: change_transmission
+#  examples: |
+#    - update transmission
+#    - change transmission type
+#    - change transmission
+#    - set transmission
+#    - upgrate transmission
+#    - change transmission info
+#    - change type of transmission
 
 #    - [one_four](OneFour) 16
 #    - [one_four](OneFour) 16v
