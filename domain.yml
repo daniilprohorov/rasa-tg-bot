@@ -1,14 +1,16 @@
 version: "3.1"
 
 intents:
+  - start
+  - check
   - engine_tu3
   - engine_tu5
   - engine_et3
   - model
-  - change
   - transmission
+  - photo
+  - change
   - register
-  - register_form_activate
   - confirm
   - not_confirm
 
@@ -21,6 +23,7 @@ entities:
   - engine_ent
   - transmission_ent
   - change_ent
+  - photo_ent
 
 
 
@@ -29,6 +32,7 @@ actions:
   - action_register_form_slots_reset
   - action_register_form_filled_slot_true
   - action_register_form_filled_slot_false
+  - action_check
 
 
 
@@ -72,6 +76,13 @@ slots:
     - type: from_entity
       entity: transmission_ent
 
+  photo_slot:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: photo_ent
+
 
   change_slot:
     type: categorical
@@ -80,6 +91,7 @@ slots:
       - engine
       - transmission
       - model
+      - photo
       - not_set
     mappings:
       - type: from_entity
@@ -100,6 +112,7 @@ forms:
       - model_slot
       - engine_slot
       - transmission_slot
+      - photo_slot
 
 
 
@@ -114,13 +127,16 @@ responses:
   - text: "et3"
 
   utter_ask_model_slot:
-    - text: "Please write model of your car:"
+    - text: "Please write model of your car[C2/C3]:"
 
   utter_ask_engine_slot:
-    - text: "Please write engine of your car:"
+    - text: "Please write engine of your car [TU3/TU5/ET3]:"
 
   utter_ask_transmission_slot:
-    - text: "Please write transmission of your car:"
+    - text: "Please write transmission of your car [MT/AT/AMT]:"
+
+  utter_ask_photo_slot:
+    - text: "Please send URL of your car photo:"
 
   utter_model:
     - text: "Model is {model_slot}"
@@ -131,14 +147,28 @@ responses:
   utter_transmission:
     - text: "Transmission is {transmission_slot}"
 
+  utter_photo:
+    - text: "your car photo"
+#      image: "{photo_slot}"
+
   utter_change:
     - text: "Change {change_slot}"
 
   utter_all_params:
     - text: "Your params is: {model_slot} {engine_slot} {transmission_slot}"
+      image: "{photo_slot}"
 
   utter_confirm:
-    - text: "Confirm?"
+    - text: "Confirm? [Yes/no]"
+
+  utter_slots_null:
+    - text: "Slots is not filled. Please register with 'register' command at first!"
+
+  utter_start:
+    - text: "Hi! This is check car bot. You can register your car (Citroen C2 or C3 for now). Or check other cars in group?"
+
+  utter_register_end:
+    - text: "Thanks for registration! Now you can show your profile with 'check' command"
 
 
 session_config:

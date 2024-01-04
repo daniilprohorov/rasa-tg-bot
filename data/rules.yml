@@ -1,14 +1,24 @@
 version: "3.1"
 
 rules:
+- rule: Start
+  steps:
+    - intent: start
+    - action: utter_start
+
+- rule: check
+  steps:
+    - intent: check
+    - action: action_check
+
 - rule: Activate form
   steps:
-    - intent: register_form_activate
+    - intent: register
     - action: action_register_form_slots_reset
     - action: register_form
     - active_loop: register_form
 
-- rule: Submit form
+- rule: End form
   condition:
     - active_loop: register_form
   steps:
@@ -23,15 +33,18 @@ rules:
 
 - rule: Submit form
   condition:
+    - active_loop: null
     - slot_was_set:
         - register_form_filled_slot: true
   steps:
     - intent: confirm
     - action: action_register_form_filled_slot_false
+    - action: utter_register_end
 
 
 - rule: Not submit form
   condition:
+    - active_loop: null
     - slot_was_set:
         - register_form_filled_slot: true
   steps:

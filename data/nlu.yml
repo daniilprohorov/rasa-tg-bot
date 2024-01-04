@@ -1,6 +1,18 @@
 version: "3.1"
 
 nlu:
+- intent: start
+  examples: |
+    - start
+
+- intent: check
+  examples: |
+    - check
+
+- regex: photo_ent
+  examples: |
+    - (https?:\/\/)?([\w\-])+\.{1}([a-zA-Z]{2,63})([\/\w-]*)*\/?\??([^#\n\r]*)?#?([^\n\r]*)
+
 - regex: one_six
   examples: |
     - \b1\.6\b
@@ -35,6 +47,7 @@ nlu:
     - [c2](model_ent)
     - [c3](model_ent)
     - [c2](model_ent) [vts]{"entity": "engine_ent", "value": "1.6 tu5jp4"}
+    - citroen [c2](model_ent) [vts]{"entity": "engine_ent", "value": "1.6 tu5jp4"}
     - [c2](model_ent) vtr
     - citroen [c2](model_ent)
     - citroen [c3](model_ent)
@@ -53,9 +66,20 @@ nlu:
     - [auto]{"entity": "transmission_ent", "value": "AMT"}
     - [AMT](transmission_ent)
 
+- intent: photo
+  examples: |
+    - [https://imgur.com/t/lol/kek/123432111](photo_ent)
+    - [http://web5-site.com/directory](photo_ent)
+    - [https://fa-st.web9site.com/directory/file.filename](photo_ent)
+    - [website.com/?querystring](photo_ent)
+    - [www.website.com/?key=val](photo_ent)
+    - [https://website.com/directory/?key=val](photo_ent)
+    - [http://www.website.com/?key=val#anchor](photo_ent)
+
 - intent: register
   examples: |
     - register
+    - reset
     
 # do not know how to make is bette :woozy_face:
 - intent: change
@@ -81,11 +105,19 @@ nlu:
     - upgrade [model](change_ent)
     - change [model](change_ent) info 
     - change type of [model](change_ent)
+    - update [photo](change_ent)
+    - change type [photo](change_ent)
+    - change [photo](change_ent)
+    - set [photo](change_ent)
+    - upgrade [photo](change_ent)
+    - change [photo](change_ent) info 
+    - change type of [photo](change_ent)
 
 
 - intent: confirm
   examples: |
     - yes
+    - y
     - nice
     - ok
     - okey
@@ -96,15 +128,12 @@ nlu:
 
 - intent: not_confirm
   examples: |
-    - no
     - not
+    - no
+    - n
     - false
     - not confirm
     - not ok
     - bad
     - reset
     - noooo
-
-- intent: register_form_activate
-  examples: |
-    - register_form_activate

@@ -11,7 +11,7 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import SlotSet, FollowupAction
 
 
 class ActionChangeSlotSetNull(Action):
@@ -30,7 +30,11 @@ class ActionRegisterFormSlotsReset(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        return [SlotSet("engine_slot", None), SlotSet("transmission_slot", None), SlotSet("model_slot", None), SlotSet("register_form_filled_slot", False)]
+        return [SlotSet("engine_slot", None),
+            SlotSet("transmission_slot", None),
+            SlotSet("model_slot", None),
+            SlotSet("photo_slot", None),
+            SlotSet("register_form_filled_slot", False)]
 
 class ActionRegisterFormFilledSlotTrue(Action):
     def name(self) -> Text:
@@ -49,3 +53,19 @@ class ActionRegisterFormFilledSlotFalse(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         return [SlotSet("register_form_filled_slot", False)]
+
+class ActionCheck(Action):
+    def name(self) -> Text:
+        return "action_check"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        model = tracker.get_slot('model_slot')
+        engine = tracker.get_slot('engine_slot')
+        transmission = tracker.get_slot('transmission_slot')
+        photo = tracker.get_slot('photo_slot')
+        if model and engine and transmission and photo:
+            return [FollowupAction("utter_all_params")]
+        else:
+            return [FollowupAction("utter_slots_null")]
