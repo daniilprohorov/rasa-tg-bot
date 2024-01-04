@@ -50,6 +50,7 @@ nlu:
     - [manual]{"entity": "transmission_ent", "value": "MT"}
     - [MT](transmission_ent)
     - [AT](transmission_ent)
+    - [auto]{"entity": "transmission_ent", "value": "AMT"}
     - [AMT](transmission_ent)
 
 - intent: register
@@ -73,6 +74,46 @@ nlu:
     - upgrade [transmission](change_ent)
     - change [transmission](change_ent) info 
     - change type of [transmission](change_ent)
+    - update [model](change_ent)
+    - change type [model](change_ent)
+    - change [model](change_ent)
+    - set [model](change_ent)
+    - upgrade [model](change_ent)
+    - change [model](change_ent) info 
+    - change type of [model](change_ent)
+
+
+#- intent: confirm
+#  examples: |
+#    - [yes]{"entity": "confirm_ent", "value": true}
+#    - [nice]{"entity": "confirm_ent", "value": true}
+#    - [ok]{"entity": "confirm_ent", "value": true}
+#    - [okey]{"entity": "confirm_ent", "value": true}
+#    - [good]{"entity": "confirm_ent", "value": true}
+#    - [confirm]{"entity": "confirm_ent", "value": true}
+#    - [true]{"entity": "confirm_ent", "value": true}
+
+- intent: confirm
+  examples: |
+    - yes
+    - nice
+    - ok
+    - okey
+    - good
+    - confirm
+    - true
+    - save
+
+- intent: not_confirm
+  examples: |
+    - no
+    - not
+    - false
+    - not confirm
+    - not ok
+    - bad
+    - reset
+    - noooo
 
 #- intent: change_engine
 #  examples: |

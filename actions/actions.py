@@ -30,4 +30,22 @@ class ActionRegisterFormSlotsReset(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        return [SlotSet("engine_slot", None), SlotSet("transmission_slot", None), SlotSet("model_slot", None)]
+        return [SlotSet("engine_slot", None), SlotSet("transmission_slot", None), SlotSet("model_slot", None), SlotSet("register_form_filled_slot", False)]
+
+class ActionRegisterFormFilledSlotTrue(Action):
+    def name(self) -> Text:
+        return "action_register_form_filled_slot_true"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        return [SlotSet("register_form_filled_slot", True)]
+
+class ActionRegisterFormFilledSlotFalse(Action):
+    def name(self) -> Text:
+        return "action_register_form_filled_slot_false"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        return [SlotSet("register_form_filled_slot", False)]

@@ -17,4 +17,27 @@ rules:
     - slot_was_set:
         - requested_slot: null
     - action: utter_all_params
+    - action: action_register_form_filled_slot_true
+    - action: utter_confirm
+
+
+- rule: Submit form
+  condition:
+    - slot_was_set:
+        - register_form_filled_slot: true
+  steps:
+    - intent: confirm
+    - action: action_register_form_filled_slot_false
+
+
+- rule: Not submit form
+  condition:
+    - slot_was_set:
+        - register_form_filled_slot: true
+  steps:
+  - intent: not_confirm
+  - action: action_register_form_filled_slot_false
+  - action: action_register_form_slots_reset
+  - action: register_form
+  - active_loop: register_form
 

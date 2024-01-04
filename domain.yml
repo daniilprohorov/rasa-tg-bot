@@ -9,6 +9,8 @@ intents:
   - transmission
   - register
   - register_form_activate
+  - confirm
+  - not_confirm
 
 entities:
   - OneFour
@@ -21,6 +23,8 @@ entities:
 actions:
   - action_change_slot_set_null
   - action_register_form_slots_reset
+  - action_register_form_filled_slot_true
+  - action_register_form_filled_slot_false
 
 slots:
   engine_slot:
@@ -73,6 +77,12 @@ slots:
       - type: from_entity
         entity: change_ent
 
+  register_form_filled_slot:
+    type: bool
+    influence_conversation: false
+    mappings:
+      - type: custom
+
 
 
 forms:
@@ -81,7 +91,7 @@ forms:
       - model_slot
       - engine_slot
       - transmission_slot
-      
+
 
 
 
@@ -137,6 +147,9 @@ responses:
 
   utter_all_params:
     - text: "Your params is: {model_slot} {engine_slot} {transmission_slot}"
+
+  utter_confirm:
+    - text: "Confirm?"
 
 
 session_config:
