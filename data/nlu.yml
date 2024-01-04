@@ -57,7 +57,7 @@ nlu:
   examples: |
     - register
     
-
+# do not know how to make is bette :woozy_face:
 - intent: change
   examples: |
     - update [engine](change_ent)
@@ -83,16 +83,6 @@ nlu:
     - change type of [model](change_ent)
 
 
-#- intent: confirm
-#  examples: |
-#    - [yes]{"entity": "confirm_ent", "value": true}
-#    - [nice]{"entity": "confirm_ent", "value": true}
-#    - [ok]{"entity": "confirm_ent", "value": true}
-#    - [okey]{"entity": "confirm_ent", "value": true}
-#    - [good]{"entity": "confirm_ent", "value": true}
-#    - [confirm]{"entity": "confirm_ent", "value": true}
-#    - [true]{"entity": "confirm_ent", "value": true}
-
 - intent: confirm
   examples: |
     - yes
@@ -115,32 +105,6 @@ nlu:
     - reset
     - noooo
 
-#- intent: change_engine
-#  examples: |
-#    - update engine
-#    - change engine type
-#    - change engine
-#    - set engine
-#    - upgrate engine
-#    - change engine info
-#    - change type of engine
-#
-#- intent: change_transmission
-#  examples: |
-#    - update transmission
-#    - change transmission type
-#    - change transmission
-#    - set transmission
-#    - upgrate transmission
-#    - change transmission info
-#    - change type of transmission
-
-#    - [one_four](OneFour) 16
-#    - [one_four](OneFour) 16v
-#    - [one_four](OneFour) 16 valves
-#    - [one_four](OneFour) sixteen valves
-
-    
 - intent: register_form_activate
   examples: |
     - register_form_activate

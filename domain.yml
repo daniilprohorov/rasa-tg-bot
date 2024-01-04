@@ -12,6 +12,8 @@ intents:
   - confirm
   - not_confirm
 
+
+
 entities:
   - OneFour
   - OneSix
@@ -20,11 +22,15 @@ entities:
   - transmission_ent
   - change_ent
 
+
+
 actions:
   - action_change_slot_set_null
   - action_register_form_slots_reset
   - action_register_form_filled_slot_true
   - action_register_form_filled_slot_false
+
+
 
 slots:
   engine_slot:
@@ -46,12 +52,14 @@ slots:
     - type: from_entity
       entity: engine_ent
 
+
   model_slot:
     type: text
     influence_conversation: false
     mappings:
     - type: from_entity
       entity: model_ent
+
 
   transmission_slot:
     type: categorical
@@ -64,6 +72,7 @@ slots:
     - type: from_entity
       entity: transmission_ent
 
+
   change_slot:
     type: categorical
     influence_conversation: true
@@ -72,10 +81,10 @@ slots:
       - transmission
       - model
       - not_set
-
     mappings:
       - type: from_entity
         entity: change_ent
+
 
   register_form_filled_slot:
     type: bool
@@ -94,27 +103,7 @@ forms:
 
 
 
-
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
   utter_tu3:
   - text: "tu3"
 
