@@ -8,12 +8,9 @@ stories:
     - slot_was_set:
         - change_slot: engine
     - action: utter_ask_engine_slot
-    - or:
-      - intent: engine_tu3
-      - intent: engine_tu5
-      - intent: engine_et3
+    - intent: engine
     - action: utter_engine
-    - action: action_change_slot_set_null
+#    - action: action_change_slot_set_null
     - action: register_form
     - active_loop: register_form
 
@@ -25,7 +22,7 @@ stories:
     - action: utter_ask_transmission_slot
     - intent: transmission
     - action: utter_transmission
-    - action: action_change_slot_set_null
+#    - action: action_change_slot_set_null
     - action: register_form
     - active_loop: register_form
 
@@ -37,7 +34,7 @@ stories:
     - action: utter_ask_model_slot
     - intent: model
     - action: utter_model
-    - action: action_change_slot_set_null
+#    - action: action_change_slot_set_null
     - action: register_form
     - active_loop: register_form
 
@@ -49,6 +46,6 @@ stories:
     - action: utter_ask_photo_slot
     - intent: photo
     - action: utter_photo
-    - action: action_change_slot_set_null
+#    - action: action_change_slot_set_null
     - action: register_form
     - active_loop: register_form

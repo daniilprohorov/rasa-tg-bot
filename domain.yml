@@ -3,9 +3,7 @@ version: "3.1"
 intents:
   - start
   - check
-  - engine_tu3
-  - engine_tu5
-  - engine_et3
+  - engine
   - model
   - transmission
   - photo
@@ -41,18 +39,6 @@ slots:
     type: text
     influence_conversation: false
     mappings:
-    - type: from_intent
-      intent: engine_tu3
-      value: "1.4 tu3"
-
-    - type: from_intent
-      intent: engine_tu5
-      value: "1.6 tu5"
-
-    - type: from_intent
-      intent: engine_et3
-      value: "1.4 et3"
-
     - type: from_entity
       entity: engine_ent
 

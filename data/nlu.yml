@@ -13,27 +13,18 @@ nlu:
   examples: |
     - (https?:\/\/)?([\w\-])+\.{1}([a-zA-Z]{2,63})([\/\w-]*)*\/?\??([^#\n\r]*)?#?([^\n\r]*)
 
-#- regex: engine_ent
-#  examples: |
-#    - \b1\.6\b
-#    - \b1\,6\b
-#    - \b1\.4\b
-#    - \b1\,4\b
-
-- intent: engine_tu5
+- intent: engine
   examples: |
-    - tu5
-    - tu5jp4
+    - [tu5]{"entity": "engine_ent", "value": "1.6 tu5"} 
+    - [tu5jp4]{"entity": "engine_ent", "value": "1.6 tu5jp4"}
     - [1.6]{"entity": "engine_ent", "value": "1.6 tu5"} 
     - [1,6]{"entity": "engine_ent", "value": "1.6 tu5"} 
-    - nfu
-
-- intent: engine_tu3
-  examples: |
-    - tu3
-    - tu3jp
+    - [nfu]{"entity": "engine_ent", "value": "1.6 tu5"} 
+    - [tu3]{"entity": "engine_ent", "value": "1.4 tu3"}
+    - [tu3jp]{"entity": "engine_ent", "value": "1.4 tu3"}
     - [1.4]{"entity": "engine_ent", "value": "1.4 tu3"} 
     - [1,4]{"entity": "engine_ent", "value": "1.4 tu3"} 
+    - [et3]{"entity": "engine_ent", "value": "1.4 et3"}
 
 - intent: model
   examples: |
@@ -46,10 +37,6 @@ nlu:
     - citroen [c3](model_ent)
     - citroen [c2](model_ent) vtr
     - citroen [c2](model_ent) vts
-
-- intent: engine_et3
-  examples: |
-    - et3
 
 - intent: transmission
   examples: |
