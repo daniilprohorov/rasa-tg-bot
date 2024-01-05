@@ -13,34 +13,27 @@ nlu:
   examples: |
     - (https?:\/\/)?([\w\-])+\.{1}([a-zA-Z]{2,63})([\/\w-]*)*\/?\??([^#\n\r]*)?#?([^\n\r]*)
 
-- regex: one_six
-  examples: |
-    - \b1\.6\b
-    - \b1\,6\b
-
-- regex: one_four
-  examples: |
-    - \b1\.4\b
-    - \b1\,4\b
-    - \b14\b
-
+#- regex: engine_ent
+#  examples: |
+#    - \b1\.6\b
+#    - \b1\,6\b
+#    - \b1\.4\b
+#    - \b1\,4\b
 
 - intent: engine_tu5
   examples: |
     - tu5
     - tu5jp4
-    - [16](OneSix) 
-    - [16](OneSix) 16v
+    - [1.6]{"entity": "engine_ent", "value": "1.6 tu5"} 
+    - [1,6]{"entity": "engine_ent", "value": "1.6 tu5"} 
     - nfu
 
 - intent: engine_tu3
   examples: |
     - tu3
     - tu3jp
-    - [14](OneFour)
-    - [14](OneFour) 8v
-    - [14](OneFour) eight valves
-    - [14](OneFour) 8 valves
+    - [1.4]{"entity": "engine_ent", "value": "1.4 tu3"} 
+    - [1,4]{"entity": "engine_ent", "value": "1.4 tu3"} 
 
 - intent: model
   examples: |

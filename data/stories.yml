@@ -12,7 +12,6 @@ stories:
       - intent: engine_tu3
       - intent: engine_tu5
       - intent: engine_et3
-
     - action: utter_engine
     - action: action_change_slot_set_null
     - action: register_form

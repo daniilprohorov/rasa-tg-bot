@@ -61,6 +61,8 @@ class ActionCheck(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        metadata = tracker.latest_message
+        print(tracker.current_state()['sender_id'])
         model = tracker.get_slot('model_slot')
         engine = tracker.get_slot('engine_slot')
         transmission = tracker.get_slot('transmission_slot')
