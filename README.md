@@ -46,3 +46,20 @@ https://rasa.com/docs/rasa/
 
   ![v1.3](/pics/tgBotDialog.drawio.v1.3.png)
 </details>
+
+## V2 Блок схемы финальной версии бота
+<details>
+  <summary>Общая диаграмма</summary>
+
+  ![v1.0](/pics/tgBotDialog.drawio.v1.0.png)
+</details>
+
+<details>
+  <summary>Примеры диалогов</summary>
+
+  ![v1.1](/pics/tgBotDialog.drawio.v1.1.png)
+
+  ![v1.2](/pics/tgBotDialog.drawio.v1.2.png)
+
+  ![v1.3](/pics/tgBotDialog.drawio.v1.3.png)
+</details>
