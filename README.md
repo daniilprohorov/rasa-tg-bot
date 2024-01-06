@@ -29,3 +29,10 @@ https://rasa.com/docs/rasa/
 
 # Блок-схемы:
 ## V1
+![v1.0](/pics/tgBotDialog.drawio.v1.0.png)
+### Примеры диалогов:
+![v1.1](/pics/tgBotDialog.drawio.v1.1.png)
+
+![v1.2](/pics/tgBotDialog.drawio.v1.2.png)
+
+![v1.3](/pics/tgBotDialog.drawio.v1.3.png)
