@@ -28,11 +28,20 @@ https://rasa.com/docs/rasa/
 - /whois ответом на любое сообщение человека в группе, можно получить краткое описание с сайта клуба, а также ссылку на личную страницу в клубе
 
 # Блок-схемы:
+
 ## V1
-![v1.0](/pics/tgBotDialog.drawio.v1.0.png)
-### Примеры диалогов:
-![v1.1](/pics/tgBotDialog.drawio.v1.1.png)
+<details>
+  <summary>Общая диаграмма</summary>
 
-![v1.2](/pics/tgBotDialog.drawio.v1.2.png)
+  ![v1.0](/pics/tgBotDialog.drawio.v1.0.png)
+</details>
 
-![v1.3](/pics/tgBotDialog.drawio.v1.3.png)
+<details>
+  <summary>Примеры диалогов</summary>
+
+  ![v1.1](/pics/tgBotDialog.drawio.v1.1.png)
+
+  ![v1.2](/pics/tgBotDialog.drawio.v1.2.png)
+
+  ![v1.3](/pics/tgBotDialog.drawio.v1.3.png)
+</details>
