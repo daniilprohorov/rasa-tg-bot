@@ -30,7 +30,7 @@ https://rasa.com/docs/rasa/
 
 # Блок-схемы:
 
-## V1
+## V1 Блок схемы созданные при планировании бота
 <details>
   <summary>Общая диаграмма</summary>
 
