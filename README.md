@@ -60,7 +60,7 @@ https://rasa.com/docs/rasa/
   ![v1.1](/pics/tgBotDialog.drawio.v2.1.png)
 </details>
 
-с# Примеры
+# Примеры
 
 <details>
   <summary>Пример диалога в ТГ</summary>
